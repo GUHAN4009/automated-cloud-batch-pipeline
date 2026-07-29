@@ -191,3 +191,15 @@ python gold/fact_order_items.py   # must run last -- depends on all dims
 
 - `config.py` centralizes the S3 write logic: Spark's `.write.csv()` always produces a folder (part-file + `_SUCCESS` + `.crc`), so `write_layer_csv()` writes to a temp prefix, locates the single part file via boto3, copies it to a clean final key, and deletes the temp folder.
 - Payments and reviews are pre-aggregated to one row per `order_id` before joining into the fact table, to avoid join fan-out.
+
+---
+
+## 👤 About Me
+
+Hi I'm Guhan, a Data Science student . This project is part of my ongoing effort to build practical, portfolio-ready experience in data engineering and analytics.
+
+---
+
+## 🛡️ License
+
+This project is licensed under the MIT License. Feel free to explore, learn from, and build on it.
