@@ -1,4 +1,20 @@
-pyspark
-boto3
-apache-airflow
-pandas
+  Category                 Technology               Version
+  ------------------------ ------------------------ ------------------------
+  Programming Language     Python                   3.13.x
+  Distributed Processing   Apache Spark             3.5.6
+  Spark API                PySpark                  3.5.6
+  JVM                      OpenJDK                  17.0.19
+  Hadoop                   Apache Hadoop            3.3.4
+  Hadoop AWS Connector     hadoop-aws               3.3.4
+  AWS SDK for Hadoop       aws-java-sdk-bundle      1.12.262
+  Cloud Storage            Amazon S3                Service
+  Cloud Identity           AWS IAM                  Service
+  AWS SDK                  boto3                    1.40.11
+  PySpark Gateway          Py4J                     0.10.9.7
+  Data Format              CSV                      RFC 4180
+  Data Architecture        Medallion Architecture   Bronze → Silver → Gold
+  Data Warehouse Model     Star Schema              Kimball Style
+  Development IDE          Visual Studio Code       Latest
+  Notebook Environment     Jupyter Notebook         Latest
+  Operating System         Windows 11               24H2
+  Version Control          Git                      Latest
