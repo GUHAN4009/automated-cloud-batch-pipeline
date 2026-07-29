@@ -1,3 +1,8 @@
+#purpose of this script:
+#===========================================================================
+#read seller data from AWS(s3), and tranform it respected to bussines requirements and decisions
+#============================================================================
+
 import sys
 from pathlib import Path
 sys.path.append(str(Path(__file__).resolve().parent.parent))
