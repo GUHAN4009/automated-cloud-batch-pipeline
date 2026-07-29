@@ -1,3 +1,8 @@
+#Purpose of this script:
+#===============================================================================
+#This script loads the raw data to the cloud
+#================================================================================
+
 import boto3
 import sys
 from pathlib import Path
