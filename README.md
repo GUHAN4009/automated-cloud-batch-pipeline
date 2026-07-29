@@ -1,8 +1,19 @@
-# Cloud Batch Pipeline
+# Automates Cloud Batch Pipeline
 
 A batch ETL pipeline that transforms the [Olist Brazilian e-commerce dataset](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce) into an analytics-ready star schema on AWS S3, using a bronze → silver → gold medallion architecture built with Python, boto3, and PySpark.
+## 🎯 About This Project
 
-## Architecture
+As a Computer Science student specializing in Data Science, I built this project to strengthen my hands-on skills in:
+- PySpark & Distributed Data Processing
+- Cloud Data Storage & Integration (AWS S3)
+- ETL Pipeline Design (Bronze → Silver → Gold Medallion Architecture)
+- Data Modeling (Star Schema — dimensions, fact tables, aggregates)
+- Data Cleansing & Quality Assurance (validation guardrails, fan-out-safe joins)
+- Pipeline Automation (Airflow orchestration, Docker containerization)
+
+It's designed to reflect the kind of foundational data engineering work found in real analytics teams — automating the ingestion, cleaning, and modeling of raw e-commerce data into an analytics-ready warehouse — and serves as a portfolio piece demonstrating my understanding of end-to-end, cloud-based data pipeline design.
+
+##🏗️ Architecture
 
 ```
 Local CSVs
@@ -32,7 +43,7 @@ graph TD
     D --> E[write_layer_csv&#40;&#41;<br/>temp write to locate part file to copy to clean key to cleanup]
 ```
 
-## Project structure
+##📂 Project structure
 
 ```
 .
