@@ -116,7 +116,7 @@ The DAG (`docker/dags/ecommerce_pipeline.py`) is manually triggered (`schedule=N
 `max_active_tasks=1` is set intentionally at the DAG level — nothing runs in parallel anywhere in the pipeline, which keeps runs predictable and easy to debug when a step fails.
 ## Airflow DAG
 
-![Airflow DAG](images/airflow.png)
+![Airflow DAG](screenshots/airflow.png)
 
 ## Data model (gold layer)
 
