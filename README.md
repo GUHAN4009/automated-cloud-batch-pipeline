@@ -93,8 +93,10 @@ The DAG (`docker/dags/ecommerce_pipeline.py`) is manually triggered (`schedule=N
 | 4 | `aggregated_tables` | Builds the 3 reporting rollups on top of the finished star schema |
 
 `max_active_tasks=1` is set intentionally at the DAG level — nothing runs in parallel anywhere in the pipeline, which keeps runs predictable and easy to debug when a step fails.
+
 ##Cloud Storage
-![Cloud Storage](screenshots/clod.png)
+![Cloud Storage](screenshots/cloud.png)
+
 ## Data model (gold layer)
 
 **Fact table:** `fact_order_items` — grain: one row per order line item.
