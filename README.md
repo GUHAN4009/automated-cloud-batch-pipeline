@@ -41,6 +41,7 @@ Aggregated reporting tables   s3://bucket/gold/<agg_table>/
     ├── agg_seller_performance
     └── monthly_sales_by_state
 ```
+![Architecture](screenshots/arcitecture.png)
 
 Each layer writes back to S3 as a single, cleanly-named CSV (see [`config.py`](#configpy) for how the Spark multi-part output problem is handled), so every script in the next layer has a predictable path to read from.
 
