@@ -18,29 +18,7 @@ It's designed to reflect the kind of foundational data engineering work found in
 
 The entire pipeline runs as a single Airflow DAG (`ecommerce_pipeline`) inside a Dockerized Airflow cluster (CeleryExecutor + Postgres + Redis). Execution is deliberately serialized (`max_active_tasks=1`) so every task — ingestion, each silver transform, each dimension, the fact table, each aggregate — runs one at a time, in a fixed, predictable order.
 
-```
-Local CSVs
-    │  boto3 upload (no transform)
-    ▼
-Bronze  (raw copies)          s3://bucket/bronze/<dataset>/
-    │  PySpark: clean, standardize, enforce data quality
-    ▼
-Silver  (cleaned tables)      s3://bucket/silver/<dataset>/
-    │  PySpark: join, dedupe, generate surrogate keys
-    ▼
-Gold    (star schema)         s3://bucket/gold/<table>/
-    ├── dim_customers
-    ├── dim_sellers
-    ├── dim_products
-    ├── dim_date
-    └── fact_order_items
-    │  PySpark: roll up the star schema
-    ▼
-Aggregated reporting tables   s3://bucket/gold/<agg_table>/
-    ├── agg_category_peformance
-    ├── agg_seller_performance
-    └── monthly_sales_by_state
-```
+
 ![Architecture](screenshots/arcitecture.png)
 
 Each layer writes back to S3 as a single, cleanly-named CSV (see [`config.py`](#configpy) for how the Spark multi-part output problem is handled), so every script in the next layer has a predictable path to read from.
