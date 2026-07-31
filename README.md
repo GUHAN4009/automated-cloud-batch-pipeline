@@ -84,7 +84,7 @@ graph LR
 ## Orchestration (Airflow)
 
 The DAG (`docker/dags/ecommerce_pipeline.py`) is manually triggered (`schedule=None`, `catchup=False`) and runs four stages in strict sequence:
-
+![Airflow DAG](screenshots/airflow.png)
 | Stage | Task group | What it does |
 |---|---|---|
 | 1 | `ingest_to_s3` | Uploads every raw CSV from `Raw_data/` to `bronze/` in S3 |
@@ -94,9 +94,9 @@ The DAG (`docker/dags/ecommerce_pipeline.py`) is manually triggered (`schedule=N
 
 `max_active_tasks=1` is set intentionally at the DAG level — nothing runs in parallel anywhere in the pipeline, which keeps runs predictable and easy to debug when a step fails.
 ## Airflow DAG
-
-![Airflow DAG](screenshots/airflow.png)
-
+```
+![Cloud Storage](screenshots/clod.png)
+```
 ## Data model (gold layer)
 
 **Fact table:** `fact_order_items` — grain: one row per order line item.
